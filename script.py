@@ -6,6 +6,7 @@ with open('./PowerPlay.csv') as pp:
     ball = 0 # to track each ball in over
     j = 0
     db = 0
+    tdb = 0
     db_l =[] #values of no. of dot balls in each innings
     for i in crd:
         ball = 0 #start from first over first ball
@@ -16,6 +17,7 @@ with open('./PowerPlay.csv') as pp:
         j = 5 #start from first ball of the innings
         while(j<len(i)):
             if(i[j]=='0'):
+                tdb = tdb + 1
                 db = db+1
             ball = ball + 1
             if(ball==11):
@@ -44,3 +46,5 @@ with open('Result.csv', 'w+', newline='') as file:
     writer.writerow(["No. of dot balls","-","No. of innings"])
     for i in range(0,31):
         writer.writerow([i,"-",dict_f[i]])
+
+    writer.writerow(["Total no. of dot balls in all the innings","-",tdb])
