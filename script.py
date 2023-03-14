@@ -48,3 +48,4 @@ with open('Result.csv', 'w+', newline='') as file:
         writer.writerow([i,"-",dict_f[i]])
 
     writer.writerow(["Total no. of dot balls in all the innings","-",tdb])
+    
