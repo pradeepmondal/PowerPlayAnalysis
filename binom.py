@@ -15,3 +15,4 @@ with open('Binom.csv', 'w+', newline='') as file:
     writer.writerow(["No. of dot balls","-","Probability of dot balls in an inning as per binomial distribution"])
     for i in range(n + 1):
         writer.writerow([str(rv[i]),"-", str(f'{dist[i]:.4f}')])
+        
